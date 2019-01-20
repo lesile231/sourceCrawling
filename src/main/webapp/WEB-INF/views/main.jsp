@@ -72,20 +72,21 @@
 			return result;
 		}
 		
-		if( $("#outputType").val() == null || $("#outputType").val() == "" ) {
+		if( $("#outputType").val() === null || $("#outputType").val() === "" ) {
 			
 			alert( "출력 타입을 입력해주세요." );
 			return result;
 		}
 		
-		if( $("#unitLength").val() == null || $("#unitLength").val() == "" ) {
+		if( $("#unitLength").val() === null || $("#unitLength").val() === "" ) {
 
 			alert( "출력 묶음 단위를 입력해주세요." );
 			return result;
-		}	
+		}
 		
 		return true;
 	}
+	
 	
 	function printQuotientRemainder( characterString ) {
 		
