@@ -46,11 +46,16 @@ public class CrawlingController {
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		LinkedList<Character> crawlingStringList = new LinkedList<Character>();
 		
-		HttpURLConnection conn = crawlingService.getConnectionFromURL( url );;
+		HttpURLConnection conn = crawlingService.getConnectionFromURL( url );
+		
+		if( conn == null ) {
+			return null;
+		}
+		
 		
 		try (
-			  InputStream input = conn.getInputStream();
-			  InputStreamReader inputStreamReader = new InputStreamReader(input, StandardCharsets.UTF_8)
+			  InputStream inputStream = conn.getInputStream();
+			  InputStreamReader inputStreamReader = new InputStreamReader(inputStream, StandardCharsets.UTF_8)
 		) {
 			crawlingStringList = stringHandleService.stringHandling( inputStreamReader, outputType );
 		}
@@ -59,7 +64,6 @@ public class CrawlingController {
 		}
 		
 		resultMap.put( "characterString" , crawlingStringList );
-		
 		return resultMap;
 	}
 	

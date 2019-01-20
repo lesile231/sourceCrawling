@@ -40,7 +40,6 @@
 				success : function( data ) {
 					
 					if( data.characterString.length == 0 ) {
-
 						$("#quotient").text( "조회된 소스가 없습니다." );
 						$("#remainder").text( "조회된 소스가 없습니다." );
 						return;
@@ -67,19 +66,16 @@
 		var result = false;
 		
 		if( $("#url").val() == null ) {
-			
 			alert( "URL을 입력해주세요." );
 			return result;
 		}
 		
 		if( $("#outputType").val() === null || $("#outputType").val() === "" ) {
-			
 			alert( "출력 타입을 입력해주세요." );
 			return result;
 		}
 		
 		if( $("#unitLength").val() === null || $("#unitLength").val() === "" ) {
-
 			alert( "출력 묶음 단위를 입력해주세요." );
 			return result;
 		}
@@ -100,16 +96,12 @@
 		var quotientLength = characterStringLength - remainderLength;
 		
 		for( var i=0; i<quotientLength; i++ ) {
-			
 			quotient += characterString[i];
 		}
-		
-		
 		
 		var diff = characterStringLength-remainderLength;
 		
 		for( var i=diff; i<characterStringLength; i++) {
-			
 			remainder += characterString[i];
 		}
 		
@@ -163,7 +155,7 @@
 	</div>
 	
 	<div>
-		출력 묶음 단위 : <input type="text" id="unitLength">  </input>
+		출력 묶음 단위 : <input type="text" id="unitLength"/>
 	</div>
 	
 	<div>
